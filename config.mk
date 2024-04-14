@@ -24,12 +24,12 @@ PRODUCT_PACKAGES += \
 
 # Common blobs
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/mi9_common/system/lib,$(TARGET_COPY_OUT_SYSTEM)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/mi9_common/system/lib64,$(TARGET_COPY_OUT_SYSTEM)/lib64) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/mi9_common/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/mi9_common/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/mi9_common/vendor/bin,$(TARGET_COPY_OUT_VENDOR)/bin) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/mi9_common/vendor/etc,$(TARGET_COPY_OUT_VENDOR)/etc)
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/system/lib,$(TARGET_COPY_OUT_SYSTEM)/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/system/lib64,$(TARGET_COPY_OUT_SYSTEM)/lib64) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/bin,$(TARGET_COPY_OUT_VENDOR)/bin) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/etc,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 endif
 
@@ -37,8 +37,8 @@ ifeq ($(filter davinci,$(TARGET_DEVICE)),)
 
 # Davinci(in) blobs
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/davinci/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/davinci/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/davinci/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/davinci/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
 
 endif
 
@@ -46,8 +46,8 @@ ifeq ($(filter raphael cepheus,$(TARGET_DEVICE)),)
 
 # Raphael(in)/Cepheus blobs
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/raphael_cepheus/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/configs/raphael_cepheus/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael_cepheus/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael_cepheus/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
 
 endif
 
