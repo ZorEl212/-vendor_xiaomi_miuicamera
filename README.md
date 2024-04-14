@@ -1,14 +1,14 @@
-# Leica Camera 5.0 for Mi 9T/Redmi K20 (davinci) AOSP
+# Leica Camera 5.0 for Mi 9 Series AOSP
 
 ### Cloning :
 - Clone this repo in vendor/xiaomi/miuicamera in your working directory by :
 ```
-git clone https://gitlab.com/ItzDFPlayer/vendor_xiaomi_miuicamera -b leica-5.0-davinci vendor/xiaomi/miuicamera
+git clone https://gitlab.com/ItzDFPlayer/vendor_xiaomi_miuicamera -b leica-5.0 vendor/xiaomi/miuicamera
 ```
 
-Make these changes in **sm6150-common**
+Make these changes in **smXXXX-common**
 
-**sm6150.mk**
+**smXXXX.mk**
 ```
 # MiuiCamera
 $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
