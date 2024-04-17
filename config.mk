@@ -24,12 +24,13 @@ PRODUCT_PACKAGES += \
 
 # Common blobs
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/system/lib,$(TARGET_COPY_OUT_SYSTEM)/lib) \
     $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/system/lib64,$(TARGET_COPY_OUT_SYSTEM)/lib64) \
     $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
     $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64) \
     $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/bin,$(TARGET_COPY_OUT_VENDOR)/bin) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/etc,$(TARGET_COPY_OUT_VENDOR)/etc)
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/etc,$(TARGET_COPY_OUT_VENDOR)/etc) \
+	vendor/xiaomi/miuicamera/config/mi9_common/system/lib64/libcamera_algoup_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_algoup_jni.xiaomi.so \
+	vendor/xiaomi/miuicamera/config/mi9_common/system/lib64/libcamera_mianode_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so
 
 endif
 
@@ -42,12 +43,22 @@ PRODUCT_COPY_FILES += \
 
 endif
 
-ifeq ($(filter raphael cepheus,$(TARGET_DEVICE)),)
+ifeq ($(filter raphael,$(TARGET_DEVICE)),)
 
-# Raphael(in)/Cepheus blobs
+# Raphael(in) blobs
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael_cepheus/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael_cepheus/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
+
+endif
+
+
+ifeq ($(filter cepheus,$(TARGET_DEVICE)),)
+
+# Cepheus blobs
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/cepheus/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/cepheus/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
 
 endif
 
