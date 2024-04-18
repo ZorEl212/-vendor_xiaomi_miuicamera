@@ -61,6 +61,21 @@ PRODUCT_COPY_FILES += \
 
 endif
 
+ifeq ($(filter toco,$(TARGET_DEVICE)),)
+
+# Toco blobs
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/bin,$(TARGET_COPY_OUT_VENDOR)/bin) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/etc,$(TARGET_COPY_OUT_VENDOR)/etc) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/system/lib64,$(TARGET_COPY_OUT_SYSTEM)/lib64) \
+	vendor/xiaomi/miuicamera/config/toco/system/lib64/libcamera_algoup_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_algoup_jni.xiaomi.so \
+	vendor/xiaomi/miuicamera/config/toco/system/lib64/libcamera_mianode_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so
+
+endif
+
+
 # Props
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.lens.oem_camera_package=com.android.camera
