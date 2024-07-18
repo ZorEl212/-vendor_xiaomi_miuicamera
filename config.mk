@@ -14,6 +14,13 @@ PRODUCT_PACKAGES += \
     MiuiExtraPhoto \
     MiuiScanner
 
+# Props
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.lens.oem_camera_package=com.android.camera
+
+# Sepolicy
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    vendor/xiaomi/miuicamera/sepolicy/private
 
 ifeq ($(TARGET_DEVICE), davinci)
 
@@ -28,7 +35,6 @@ ifeq ($(TARGET_DEVICE), raphael)
 $(call inherit-product, vendor/xiaomi/miuicamera/configs/raphael.mk)
 
 endif
-
 
 ifeq ($(TARGET_DEVICE), cepheus)
 
@@ -50,11 +56,3 @@ ifeq ($(filter fog rain,$(TARGET_DEVICE)),)
 $(call inherit-product, vendor/xiaomi/miuicamera/configs/fog.mk)
 
 endif
-
-# Props
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.com.google.lens.oem_camera_package=com.android.camera
-
-# Sepolicy
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    vendor/xiaomi/miuicamera/sepolicy/private
