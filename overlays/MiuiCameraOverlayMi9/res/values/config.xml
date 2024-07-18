@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- hide Universal settings button -->
+	<bool name="hide_universal_settings">true</bool>
+
+	<!-- this fix disables Studio lighting feature from Portrait mode, usually fixes crashing on AOSP ROMs -->
+	<bool name="pref_portraitfix_default">false</bool>
+
+	<!-- enable to use Parallel processing and it's features in Photo modes with Rear cameras,
+		 main features are Leica/Film filters, AI Watermark, Supermoon, Leica/Redmi watermarks
+		 Parallel processing is usually broken on AOSP and MIUI/HyperOS ports, 
+		 on AOSP it may be fixed by including some libs, also heavily depends on Device Tree and ROM sources -->
+	<bool name="pref_camera_parallel_process_enable_default">true</bool>
+
+	<!-- enable to use Parallel processing when Front camera is used -->
+	<bool name="pref_parallelfront_default">true</bool>
+</resources>

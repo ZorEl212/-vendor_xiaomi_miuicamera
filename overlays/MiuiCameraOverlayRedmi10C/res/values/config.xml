@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- change camera UI and Leica/Redmi Watermark style
+		 set to 0 for Leica (red UI) 
+		 set to 1 for Redmi (yellow UI) 
+		 set to 2 for Redmi Pro (same as previous, but slightly different watermark) -->
+	<string name="pref_custom_style_default">1</string>
+	
+		<!-- enable distortion correction for UltraWIde lens, may cause artifacts on some devices -->
+	<bool name="pref_camera_ultra_wide_ldc_default">false</bool>
+	
+		<!-- enable Multi-Frame Noise Removal (MFNR) for Photo modes, 
+		 disabling may fix photo not being saved -->
+	<bool name="pref_camera_mfnr_sat_enable_default">false</bool>
+	
+	<!-- force enable 1080p60 support in Video mode -->
+	<bool name="pref_1080p60_default">true</bool>
+	
+	<!-- enable support for Video SAT feature (lens change on zoom), 
+		 may work when Video stabilization is disabled -->
+	<bool name="pref_camera_video_sat_enable_default">false</bool>
+
+	<!-- may fix black viewfinder in photo modes, disables Tele lens usage -->
+	<bool name="pref_telefix_default">true</bool>
+
+	<!-- disables Supernight, may fix Night mode, but doesn't seem to change anything -->
+	<bool name="pref_disable_supernight_default">true</bool>
+
+	<!-- flips value of supportBackSuperNightAlgoUp in camera config -->
+	<bool name="pref_night_fix_1_default">true</bool>
+
+	<!-- next 4 settings control UltraHD for Wide/Main, UW, Tele and SuperTele lenses, 
+		 possible values:
+		 empty string - disabled UltraHD for that lens
+		 1:8000x6000 - 48mp
+		 2:9248x6944 - 64mp
+		 3:12000x9000 - 108mp
+		 4:8192x6144 - 50mp
+		 6:16320x12240 - 200mp -->
+	<string name="pref_uhd_wide_default">4:8192x6144</string>
+
+		<!-- enable support for slowmo, possible values:
+		 0 - none 
+		 1 - 120fps
+		 2 - 240fps
+		 3 - 480fps
+		 4 - 960fps
+		 5 - 1920fps
+		 6 - 3840fps -->
+	<string name="pref_slowmo_default">1</string>
+</resources>

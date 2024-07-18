@@ -15,73 +15,45 @@ PRODUCT_PACKAGES += \
     MiuiScanner
 
 
-ifeq ($(filter davinci raphael cepheus,$(TARGET_DEVICE)),)
-
-# Overlay
-PRODUCT_PACKAGES += \
-    MiuiCameraOverlay
-
-# Common blobs
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/system/lib64,$(TARGET_COPY_OUT_SYSTEM)/lib64) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/bin,$(TARGET_COPY_OUT_VENDOR)/bin) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/mi9_common/vendor/etc,$(TARGET_COPY_OUT_VENDOR)/etc) \
-	vendor/xiaomi/miuicamera/config/mi9_common/system/lib64/libcamera_algoup_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_algoup_jni.xiaomi.so \
-	vendor/xiaomi/miuicamera/config/mi9_common/system/lib64/libcamera_mianode_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so
-
-endif
-
-ifeq ($(filter davinci,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE), davinci)
 
 # Davinci(in) blobs
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/davinci/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/davinci/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
+$(call inherit-product, vendor/xiaomi/miuicamera/configs/davinci.mk)
 
 endif
 
-ifeq ($(filter raphael,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE), raphael)
 
 # Raphael(in) blobs
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/raphael/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
+$(call inherit-product, vendor/xiaomi/miuicamera/configs/raphael.mk)
 
 endif
 
 
-ifeq ($(filter cepheus,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE), cepheus)
 
 # Cepheus blobs
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/cepheus/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/cepheus/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64)
+$(call inherit-product, vendor/xiaomi/miuicamera/configs/cepheus.mk)
 
 endif
 
-ifeq ($(filter toco,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE), toco)
 
 # Toco blobs
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/lib64,$(TARGET_COPY_OUT_VENDOR)/lib64) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/bin,$(TARGET_COPY_OUT_VENDOR)/bin) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/vendor/etc,$(TARGET_COPY_OUT_VENDOR)/etc) \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/config/toco/system/lib64,$(TARGET_COPY_OUT_SYSTEM)/lib64) \
-	vendor/xiaomi/miuicamera/config/toco/system/lib64/libcamera_algoup_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_algoup_jni.xiaomi.so \
-	vendor/xiaomi/miuicamera/config/toco/system/lib64/libcamera_mianode_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so
+$(call inherit-product, vendor/xiaomi/miuicamera/configs/toco.mk)
 
 endif
 
+ifeq ($(filter fog rain,$(TARGET_DEVICE)),)
+
+# Fog/Rain blobs
+$(call inherit-product, vendor/xiaomi/miuicamera/configs/fog.mk)
+
+endif
 
 # Props
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.lens.oem_camera_package=com.android.camera
-
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.vendor.camera.privapp.list=com.android.camera 
 
 # Sepolicy
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
