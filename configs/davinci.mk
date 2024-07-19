@@ -2,7 +2,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/miuicamera
 
 PRODUCT_PACKAGES += \
-    MiuiCameraOverlayMi9Series
+    MiuiCameraOverlayMi9
 
 # Common blobs
 PRODUCT_COPY_FILES += \
