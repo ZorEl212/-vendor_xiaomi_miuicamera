@@ -50,7 +50,14 @@ $(call inherit-product, vendor/xiaomi/miuicamera/configs/toco.mk)
 
 endif
 
-ifneq ($(filter fog rain,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE), fog)
+
+# Fog/Rain blobs
+$(call inherit-product, vendor/xiaomi/miuicamera/configs/fog.mk)
+
+endif
+
+ifeq ($(TARGET_DEVICE), rain)
 
 # Fog/Rain blobs
 $(call inherit-product, vendor/xiaomi/miuicamera/configs/fog.mk)
