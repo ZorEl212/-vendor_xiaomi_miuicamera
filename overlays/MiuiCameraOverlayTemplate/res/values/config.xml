@@ -116,13 +116,14 @@
 	<!-- enable video feature in Night mode -->
 	<bool name="pref_night_video">false</bool>
 
-	<!-- enable support for Video SAT feature (lens change on zoom), 
-		 may work when Video stabilization is disabled -->
+	<!-- enable support for Video SAT feature (multi-lens video zoom) -->
 	<bool name="pref_camera_video_sat_enable_default">true</bool>
 
 	<!-- force enable support for Video SAT on every video quality, may crash -->
 	<bool name="pref_camera_video_sat60fps_enable_default">false</bool>
 
+	<!-- disable multi-lens zoom in video when EIS is enabled -->
+	<bool name="pref_limit_video_sat_default">false</bool>
 
 
 
@@ -130,6 +131,9 @@
 
 	<!-- this fix disables Studio lighting feature from Portrait mode, usually fixes crashing on AOSP ROMs -->
 	<bool name="pref_portraitfix_default">true</bool>
+
+	<!-- changes Render Engine version, this may fix broken 0.6x during the zoom wheel -->
+	<bool name="pref_render_engine_default">false</bool>
 
 	<!-- another fix for Portrait mode, may break the blur effect -->
 	<bool name="pref_experimental_portrait_default">false</bool>
@@ -181,6 +185,8 @@
 
 
 
+	<!-- hide some experimental functions from users -->
+	<bool name="hide_expert_mode">false</bool>
 
 	<!-- hide Universal settings button from users -->
 	<bool name="hide_universal_settings">false</bool>
