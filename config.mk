@@ -22,44 +22,22 @@ PRODUCT_PRODUCT_PROPERTIES += \
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     vendor/xiaomi/miuicamera/sepolicy/private
 
-ifeq ($(TARGET_DEVICE), davinci)
-
-# Davinci(in) blobs
-$(call inherit-product, vendor/xiaomi/miuicamera/configs/davinci.mk)
-
+ifneq ($(findstring davinci, $($TARGET_PRODUCT)),)
+    $(call inherit-product, vendor/xiaomi/miuicamera/configs/davinci.mk)
 endif
 
-ifeq ($(TARGET_DEVICE), raphael)
-
-# Raphael(in) blobs
-$(call inherit-product, vendor/xiaomi/miuicamera/configs/raphael.mk)
-
+ifneq ($(findstring raphael, $($TARGET_PRODUCT)),)
+    $(call inherit-product, vendor/xiaomi/miuicamera/configs/raphael.mk)
 endif
 
-ifeq ($(TARGET_DEVICE), cepheus)
-
-# Cepheus blobs
-$(call inherit-product, vendor/xiaomi/miuicamera/configs/cepheus.mk)
-
+ifneq ($(findstring cepheus, $($TARGET_PRODUCT)),)
+    $(call inherit-product, vendor/xiaomi/miuicamera/configs/cepheus.mk)
 endif
 
-ifeq ($(TARGET_DEVICE), toco)
-
-# Toco blobs
-$(call inherit-product, vendor/xiaomi/miuicamera/configs/toco.mk)
-
+ifneq ($(findstring toco, $($TARGET_PRODUCT)),)
+    $(call inherit-product, vendor/xiaomi/miuicamera/configs/toco.mk)
 endif
 
-ifeq ($(TARGET_DEVICE), fog)
-
-# Fog/Rain blobs
-$(call inherit-product, vendor/xiaomi/miuicamera/configs/fog.mk)
-
-endif
-
-ifeq ($(TARGET_DEVICE), rain)
-
-# Fog/Rain blobs
-$(call inherit-product, vendor/xiaomi/miuicamera/configs/fog.mk)
-
+ifneq ($(findstring fog, $($TARGET_PRODUCT)),)
+    $(call inherit-product, vendor/xiaomi/miuicamera/configs/fog.mk)
 endif
