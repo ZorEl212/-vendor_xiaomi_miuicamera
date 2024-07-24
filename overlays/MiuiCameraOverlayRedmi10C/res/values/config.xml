@@ -20,6 +20,9 @@
 	<!-- hide Universal settings button -->
 	<bool name="hide_universal_settings">true</bool>
 
+	<!-- hide some experimental functions from users -->
+	<bool name="hide_expert_mode">true</bool>
+
 	<!-- enable support for Video SAT feature (lens change on zoom), 
 		 may work when Video stabilization is disabled -->
 	<bool name="pref_camera_video_sat_enable_default">false</bool>
