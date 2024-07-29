@@ -25,4 +25,6 @@
 	<!-- hide some experimental functions from users -->
 	<bool name="hide_expert_mode">true</bool>
 
+	<!-- enable EIS when Front video is used -->
+	<bool name="pref_front_eis_default">true</bool>
 </resources>
