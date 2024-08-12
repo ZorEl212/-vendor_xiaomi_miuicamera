@@ -27,4 +27,8 @@
 
 	<!-- enable EIS when Front video is used -->
 	<bool name="pref_front_eis_default">true</bool>
+
+	<!-- enable Super Resolution, used when taking photos with 1.1x and higher zoom, smoothens and sharpens the output image
+		 if it doesn't work, may need "pref_srreprocess_default" to be enabled from Universal settings -->
+	<bool name="pref_camera_sr_enable_default">true</bool>
 </resources>
