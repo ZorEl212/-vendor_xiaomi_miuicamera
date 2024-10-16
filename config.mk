@@ -10,10 +10,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/features/ginkgo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/device_features/ginkgo.xml \
-    $(LOCAL_PATH)/features/cheatcodes/ginkgo.json:$(TARGET_COPY_OUT_SYSTEM)/etc/ANXCamera/cheatcodes/cheatcodes.json
+    $(LOCAL_PATH)/features/cheatcodes/cheatcodes.json:$(TARGET_COPY_OUT_SYSTEM)/etc/ANXCamera/cheatcodes/cheatcodes.json
 
 PRODUCT_PACKAGES += \
-    ANXCamera 
+    ANXCamera
 
 # Props
 PRODUCT_SYSTEM_PROPERTIES += \
