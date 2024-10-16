@@ -16,7 +16,7 @@ PRODUCT_PACKAGES += \
     ANXCamera 
 
 # Props
-PRODUCT_PRODUCT_OVERRIDES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     persist.camera.eis.enabled=1 \
     ro.camera.sound.forced=0 \
     vendor.camera.aux.packagelist=com.android.camera,app.grapheneos.camera \
