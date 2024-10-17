@@ -1,14 +1,11 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/miuicamera
 
-
 LOCAL_PATH := vendor/xiaomi/miuicamera
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/system/etc,$(TARGET_COPY_OUT_SYSTEM)/etc) \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/system/priv-app/ANXCamera/lib,$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib) \
-
-PRODUCT_COPY_FILES := \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/proprietary/system/priv-app/ANXCamera/lib,$(TARGET_COPY_OUT_SYSTEM)/priv-app/ANXCamera/lib) \
     $(LOCAL_PATH)/features/ginkgo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/device_features/ginkgo.xml \
     $(LOCAL_PATH)/features/cheatcodes/cheatcodes.json:$(TARGET_COPY_OUT_SYSTEM)/etc/ANXCamera/cheatcodes/cheatcodes.json
 
